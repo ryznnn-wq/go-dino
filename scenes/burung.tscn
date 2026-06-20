@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://bcwhirapdvidn"]
+
+[ext_resource type="Script" uid="uid://6pgcjvdepmtj" path="res://scenes/burung.gd" id="1_2pxtk"]
+[ext_resource type="Texture2D" uid="uid://b0ljn4s6kfxf4" path="res://assets/obstacles/Bird.png" id="1_by23f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2pxtk"]
+atlas = ExtResource("1_by23f")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73lxo"]
+atlas = ExtResource("1_by23f")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vksfh"]
+atlas = ExtResource("1_by23f")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq0fl"]
+atlas = ExtResource("1_by23f")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xhxds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2pxtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73lxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vksfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq0fl")
+}],
+"loop": true,
+"name": &"terbang",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uw8qi"]
+radius = 31.0
+height = 88.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwmjt"]
+size = Vector2(46, 46)
+
+[node name="burung" type="Area2D" unique_id=766559888]
+script = ExtResource("1_2pxtk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1308651377]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_xhxds")
+animation = &"terbang"
+autoplay = "terbang"
+frame_progress = 0.46666285
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1948868656]
+position = Vector2(13, -2)
+shape = SubResource("CapsuleShape2D_uw8qi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=377072144]
+position = Vector2(-38, 2)
+shape = SubResource("RectangleShape2D_bwmjt")

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://coak6623fsd1j"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nqlu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xeevv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wqhvx"]
+bg_color = Color(0.9642591, 0.36550567, 0.45383543, 1)
+
+[node name="game_over" type="CanvasLayer" unique_id=223840223]
+
+[node name="Button" type="Button" parent="." unique_id=1593291701]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = -27.5
+offset_right = 127.5
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_0nqlu")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_xeevv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wqhvx")
+text = "Mulai Lagi"
